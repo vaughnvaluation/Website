@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaughn Valuation — Professional Appraisal Services</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2e;
+    --navy-mid: #162440;
+    --gold: #b8892e;
+    --gold-light: #d4a84b;
+    --gold-pale: #f0deb0;
+    --cream: #f8f5ef;
+    --white: #ffffff;
+    --slate: #4a5c78;
+    --mist: #c8d2df;
+    --text: #1a2a40;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 5vw; height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(13,27,46,0.97); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,137,46,0.18);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .logo-mark { width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; }
+  .nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+  .nav-wordmark .name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: #fff; letter-spacing: 0.06em; }
+  .nav-wordmark .tagline-small { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-top: 3px; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+  .nav-links a { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta { background: var(--gold) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 2px; font-weight: 500 !important; }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  .hero {
+    min-height: 100vh; background: var(--navy);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 5vw 160px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(184,137,46,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(184,137,46,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero::after {
+    content: ''; position: absolute; left: 5vw; top: 120px; bottom: 160px;
+    width: 1px; background: linear-gradient(to bottom, transparent, var(--gold) 20%, var(--gold) 80%, transparent); opacity: 0.4;
+  }
+  .hero-inner { position: relative; z-index: 1; max-width: 780px; padding-left: calc(5vw + 28px); }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 12px; }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--gold); }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: 300; color: #fff; line-height: 1.08; margin-bottom: 2rem; }
+  .hero h1 em { font-style: italic; color: var(--gold-pale); }
+  .hero-sub { font-size: 1rem; font-weight: 300; color: var(--mist); line-height: 1.7; max-width: 520px; margin-bottom: 3rem; }
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: #fff; padding: 0.9rem 2.2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; border: none; cursor: pointer; border-radius: 2px; transition: background 0.2s, transform 0.15s; text-decoration: none; display: inline-block; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-ghost { color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); padding: 0.9rem 2.2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; border-radius: 2px; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  .hero-stats { position: absolute; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(184,137,46,0.2); z-index: 1; }
+  .stat { padding: 2rem 5vw; border-right: 1px solid rgba(184,137,46,0.12); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--gold-light); line-height: 1; margin-bottom: 0.4rem; }
+  .stat-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+  .marquee-band { background: var(--gold); padding: 0.75rem 0; overflow: hidden; white-space: nowrap; }
+  .marquee-inner { display: inline-block; animation: marquee 22s linear infinite; }
+  .marquee-inner span { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.85); font-weight: 500; margin: 0 2.5rem; }
+  .marquee-inner span::before { content: '◆'; margin-right: 2.5rem; font-size: 0.5rem; vertical-align: middle; opacity: 0.6; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  section { padding: 6rem 5vw; }
+  .section-label { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: var(--navy); line-height: 1.15; margin-bottom: 1.25rem; }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-body { font-size: 0.95rem; font-weight: 300; color: var(--slate); line-height: 1.75; max-width: 560px; }
+
+  .about { background: var(--white); display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: center; }
+  .about-box { background: var(--navy); border-radius: 4px; padding: 3rem; position: relative; overflow: hidden; }
+  .about-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+  .about-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.55; margin-bottom: 1.5rem; }
+  .about-attribution { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+
+  .services { background: var(--cream); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .service-card { background: var(--white); border-radius: 4px; padding: 2.25rem; position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; border-bottom: 3px solid transparent; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13,27,46,0.1); border-bottom-color: var(--gold); }
+  .service-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(13,27,46,0.07); line-height: 1; position: absolute; top: 1.5rem; right: 1.75rem; }
+  .service-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--navy); margin-bottom: 0.75rem; }
+  .service-card p { font-size: 0.86rem; line-height: 1.65; color: var(--slate); font-weight: 300; }
+  .service-tag { display: inline-block; margin-top: 1.25rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+
+  .values-band { background: var(--navy); padding: 5rem 5vw; }
+  .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 3.5rem; border: 1px solid rgba(184,137,46,0.15); border-radius: 4px; overflow: hidden; }
+  .value-item { padding: 2.5rem 2rem; border-right: 1px solid rgba(184,137,46,0.12); transition: background 0.2s; }
+  .value-item:last-child { border-right: none; }
+  .value-item:hover { background: rgba(184,137,46,0.05); }
+  .value-num { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: var(--gold); margin-bottom: 1.25rem; font-style: italic; }
+  .value-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: #fff; margin-bottom: 0.6rem; }
+  .value-item p { font-size: 0.82rem; line-height: 1.65; color: rgba(255,255,255,0.45); font-weight: 300; }
+
+  .serve { background: var(--white); }
+  .serve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .serve-card { border: 1px solid #e8edf4; border-radius: 4px; padding: 2.5rem; transition: border-color 0.2s, box-shadow 0.2s; }
+  .serve-card:hover { border-color: var(--gold); box-shadow: 0 8px 28px rgba(184,137,46,0.08); }
+  .serve-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .serve-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem; }
+  .serve-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .serve-card ul li { font-size: 0.86rem; color: var(--slate); font-weight: 300; padding-left: 1.1rem; position: relative; line-height: 1.5; }
+  .serve-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; }
+
+  .uad-banner { background: linear-gradient(135deg, var(--navy-mid), var(--navy)); margin: 0 5vw; border-radius: 6px; padding: 3rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border: 1px solid rgba(184,137,46,0.25); position: relative; overflow: hidden; }
+  .uad-banner::before { content: ''; position: absolute; right: -40px; top: -40px; width: 200px; height: 200px; border: 1px solid rgba(184,137,46,0.1); border-radius: 50%; }
+  .uad-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+  .uad-text p { font-size: 0.88rem; color: var(--mist); font-weight: 300; line-height: 1.6; max-width: 480px; }
+  .uad-badge { flex-shrink: 0; background: var(--gold); border-radius: 4px; padding: 1.25rem 2rem; text-align: center; }
+  .uad-badge .badge-line1 { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 0.3rem; }
+  .uad-badge .badge-main { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: #fff; letter-spacing: 0.05em; }
+  .uad-badge .badge-line2 { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-top: 0.3rem; }
+
+  .cta-section { background: var(--cream); text-align: center; padding: 7rem 5vw; }
+  .cta-section .section-title { max-width: 600px; margin: 0 auto 1.5rem; }
+  .cta-section .section-body { margin: 0 auto; text-align: center; }
+  .cta-divider { width: 40px; height: 1px; background: var(--gold); margin: 0 auto 1.5rem; }
+
+  footer { background: var(--navy); padding: 3rem 5vw; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(184,137,46,0.15); }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: #fff; letter-spacing: 0.08em; }
+  .footer-sub { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  @media (max-width: 900px) {
+    .about { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+    .serve-grid { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .uad-banner { flex-direction: column; margin: 0 2vw; padding: 2rem; }
+    .nav-links { display: none; }
+  }
+  @media (max-width: 640px) {
+    nav { padding: 0 4vw; }
+    .nav-wordmark .tagline-small { display: none; }
+    .hero { padding: 100px 5vw 220px; }
+    .hero-inner { padding-left: 0; }
+    .hero::after { display: none; }
+    .hero h1 { font-size: 2.6rem; }
+    .hero-sub { font-size: 0.92rem; margin-bottom: 2rem; }
+    .hero-actions { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .btn-primary, .btn-ghost { width: 100%; text-align: center; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .stat { padding: 1.25rem 4vw; }
+    .stat-num { font-size: 1.5rem; }
+    .marquee-inner span { margin: 0 1.5rem; }
+    section { padding: 4rem 5vw; }
+    .services-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+    .uad-banner { padding: 2rem 1.5rem; margin: 0; border-radius: 0; }
+    .uad-text h3 { font-size: 1.3rem; }
+    .cta-section { padding: 4rem 5vw; }
+    .cta-section .section-body { font-size: 0.88rem; }
+    .cta-section div { flex-direction: column; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+  }
+
+  /* ── MOBILE HAMBURGER ── */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.7); border-radius: 2px; transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(13,27,46,0.98); backdrop-filter: blur(12px); z-index: 99; padding: 1.5rem 5vw 2rem; border-bottom: 1px solid rgba(184,137,46,0.18); flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s; }
+  .mobile-menu a:hover { color: var(--gold-light); }
+  .mobile-menu .mob-cta { background: var(--gold); color: #fff !important; padding: 0.9rem 1.5rem; border-radius: 2px; text-align: center; margin-top: 1rem; border: none; }
+  @media (max-width: 768px) {
+    .nav-links { display: none !important; }
+    .hamburger { display: flex; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 2.6rem; }
+    .hero-inner { padding-left: 2rem; }
+    .page-hero-inner { padding-left: 2rem; }
+    .about { grid-template-columns: 1fr !important; gap: 2.5rem; }
+    .services-grid { grid-template-columns: 1fr !important; }
+    .values-grid { grid-template-columns: 1fr 1fr !important; }
+    .serve-grid { grid-template-columns: 1fr !important; }
+    .bio-section { grid-template-columns: 1fr !important; gap: 2.5rem; }
+    .bio-card { position: static !important; }
+    .values-list { grid-template-columns: 1fr !important; }
+    .services-intro { grid-template-columns: 1fr !important; gap: 2rem; }
+    .service-block { grid-template-columns: 1fr !important; }
+    .service-block-left { position: static !important; }
+    .service-features { grid-template-columns: 1fr !important; }
+    .uad-strip, .uad-banner { flex-direction: column !important; margin: 0 !important; }
+    main { grid-template-columns: 1fr !important; gap: 2.5rem; padding: 3rem 5vw 4rem; }
+    .field-row { grid-template-columns: 1fr !important; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .hero-actions .btn-ghost { margin-left: 0; }
+    .stat { padding: 1.25rem 1rem; }
+    .stat-num { font-size: 1.5rem; }
+    .icp-grid { grid-template-columns: 1fr !important; }
+    section { padding: 3.5rem 5vw; }
+    .cta-section { padding: 4rem 5vw; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .btn-ghost { margin-left: 0 !important; margin-top: 0.75rem; display: inline-block; }
+    .cta-bar { padding: 2rem 1.5rem; }
+    .values-band { padding: 3rem 5vw; }
+  }
+  @media (max-width: 480px) {
+    .values-grid { grid-template-columns: 1fr !important; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .intro-stats { grid-template-columns: 1fr 1fr; }
+    nav { padding: 0 4vw; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <img src="data:image/png;base64,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" alt="Vaughn Valuation" style="width:44px;height:44px;border-radius:50%;">
+    <div class="nav-wordmark">
+      <span class="name">Vaughn Valuation</span>
+      <span class="tagline-small">Certified Residential Appraiser · North Texas &amp; Texoma</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Request an Appraisal</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+  <span></span><span></span><span></span>
+</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Certified Residential Appraiser · North Texas &amp; Southern Oklahoma</div>
+    <h1>Accurate.<br><em>Reliable.</em><br>Delivered on time.<br>Every time.</h1>
+    <p class="hero-sub">Vaughn Valuation serves lenders, AMCs, and private clients across the Texoma region with precise, defensible appraisals — including luxury, waterfront, and complex assignments others won't take on. Certified Residential Appraiser. Expert Witness experience. FHA approved. UAD 3.6 Ready.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn-primary">Request an Appraisal</a>
+      <a href="services.html" class="btn-ghost">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">UAD 3.6</div>
+      <div class="stat-label">Ready &amp; Compliant</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">CRA</div>
+      <div class="stat-label">Certified Residential Appraiser</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Expert</div>
+      <div class="stat-label">Witness Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Texoma</div>
+      <div class="stat-label">North TX &amp; Southern OK</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-band">
+  <div class="marquee-inner">
+    <span>Lender Appraisals</span><span>AMC Panel Ready</span><span>Luxury Properties</span><span>Waterfront Specialist</span><span>Complex Assignments</span><span>UAD 3.6 Compliant</span><span>FHA Approved</span><span>Expert Witness</span><span>North Texas &amp; Texoma</span><span>Certified Residential Appraiser</span><span>Reliable Turn Times</span><span>Lender Appraisals</span><span>AMC Panel Ready</span><span>Luxury Properties</span><span>Waterfront Specialist</span><span>Complex Assignments</span><span>UAD 3.6 Compliant</span><span>FHA Approved</span><span>Expert Witness</span><span>North Texas &amp; Texoma</span><span>Certified Residential Appraiser</span><span>Reliable Turn Times</span>
+  </div>
+</div>
+
+<section class="about">
+  <div class="about-text">
+    <div class="section-label">About Vaughn Valuation</div>
+    <h2 class="section-title">The Standard<br>Others <em>Avoid</em></h2>
+    <p class="section-body">Most appraisers compete on price. We compete on quality, accountability, and the willingness to take on the assignments that demand real expertise — luxury estates, waterfront properties, complex situations. When you work with Vaughn Valuation, you get accurate reports, on-time delivery, and a firm that stands behind every number it puts on paper.</p>
+    <p class="section-body" style="margin-top:1rem;">Serving North Texas and the Texoma region (Southern Oklahoma), we're a Certified Residential Appraiser with expert witness experience — fully prepared for the UAD 3.6 transition so your pipeline doesn't miss a beat.</p>
+    <div style="display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1.75rem;">
+      <span style="font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--navy); background:#f0e8d8; padding:0.4rem 0.85rem; border-radius:2px; font-weight:500;">Certified Residential Appraiser</span>
+      <span style="font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--navy); background:#f0e8d8; padding:0.4rem 0.85rem; border-radius:2px; font-weight:500;">Expert Witness</span>
+      <span style="font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--navy); background:#f0e8d8; padding:0.4rem 0.85rem; border-radius:2px; font-weight:500;">UAD 3.6 Ready</span>
+      <span style="font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--navy); background:#f0e8d8; padding:0.4rem 0.85rem; border-radius:2px; font-weight:500;">North TX &amp; Texoma</span>
+    </div>
+  </div>
+  <div>
+    <div class="about-box">
+      <p class="about-quote">"We don't overpromise. We don't cut corners. Delivered on time. Every time."</p>
+      <div class="about-attribution">Vaughn Valuation — Core Commitment</div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="section-label">What We Do</div>
+  <h2 class="section-title">Appraisal Services<br>Built for <em>Demanding</em> Work</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon">🏛️</div>
+      <h3>Lender Appraisals</h3>
+      <p>FHA Approved. FIRREA-compliant, audit-ready reports that support loan origination and withstand regulatory review. Delivered on schedule, formatted to your standards.</p>
+      <span class="service-tag">→ For Banks &amp; Mortgage Companies</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon">📋</div>
+      <h3>AMC Panel Services</h3>
+      <p>We understand how AMCs operate. Clean reports, consistent communication, SLA-aligned delivery. First-pass QC acceptance is our standard, not our goal.</p>
+      <span class="service-tag">→ For Appraisal Management Companies</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon">🏡</div>
+      <h3>Luxury Properties</h3>
+      <p>High-value homes demand deeper analysis, nuanced comp selection, and an appraiser experienced enough to support the number. We've done this before.</p>
+      <span class="service-tag">→ Residential &amp; Estate Properties</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-icon">🌊</div>
+      <h3>Waterfront Specialist</h3>
+      <p>Water access, rights, flood zones, and limited comps — waterfront appraisals require location-specific expertise. We bring it to every engagement.</p>
+      <span class="service-tag">→ Lakes, Rivers &amp; Coastal</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-icon">🧩</div>
+      <h3>Complex Assignments</h3>
+      <p>Unusual properties, atypical layouts, legal complications, tight timelines — these are the assignments we accept where others decline.</p>
+      <span class="service-tag">→ When Others Pass, We Deliver</span>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-icon">⚖️</div>
+      <h3>Expert Witness Services</h3>
+      <p>Court-ready appraisal testimony for legal proceedings, disputes, divorce, and estate litigation. Credentialed, experienced, and able to present complex valuation findings clearly under examination.</p>
+      <span class="service-tag">→ Legal, Litigation &amp; Dispute Resolution</span>
+    </div>
+  </div>
+</section>
+
+<div class="uad-banner">
+  <div class="uad-text">
+    <h3>UAD 3.6 Ready — Now</h3>
+    <p>The GSE transition to UAD 3.6 and the new URAR is underway. Many appraisers are behind. Vaughn Valuation is already compliant — so your pipeline continues without interruption, revision requests, or delays caused by non-conforming reports.</p>
+  </div>
+  <div class="uad-badge">
+    <div class="badge-line1">Certified</div>
+    <div class="badge-main">UAD 3.6</div>
+    <div class="badge-line2">Ready</div>
+  </div>
+</div>
+
+<section class="values-band">
+  <div class="section-label" style="color:var(--gold)">How We Work</div>
+  <h2 class="section-title" style="color:#fff;">Our Commitments<br>to Every <em>Client</em></h2>
+  <div class="values-grid">
+    <div class="value-item">
+      <div class="value-num">i.</div>
+      <h3>Uncompromising Accuracy</h3>
+      <p>Every report reflects rigorous research and sound methodology. We get the number right, not just done.</p>
+    </div>
+    <div class="value-item">
+      <div class="value-num">ii.</div>
+      <h3>We Take the Hard Ones</h3>
+      <p>Challenging assignments are where we prove our value. Complexity isn't a reason to decline — it's our specialty.</p>
+    </div>
+    <div class="value-item">
+      <div class="value-num">iii.</div>
+      <h3>Reliable Turn Times</h3>
+      <p>When we give you a delivery date, we mean it. Your workflow depends on it — and we've never given clients a reason not to.</p>
+    </div>
+    <div class="value-item">
+      <div class="value-num">iv.</div>
+      <h3>Delivered on Time. Every Time.</h3>
+      <p>No overpromising. No excuses. If we accept an assignment, we own it — from engagement to delivery.</p>
+    </div>
+  </div>
+</section>
+
+<section class="serve">
+  <div class="section-label">Who We Serve</div>
+  <h2 class="section-title">Built for <em>Institutional</em><br>and Private Clients</h2>
+  <div class="serve-grid">
+    <div class="serve-card">
+      <div class="serve-label">Segment 01</div>
+      <h3>Lenders</h3>
+      <ul>
+        <li>Banks, credit unions &amp; mortgage companies</li>
+        <li>FIRREA &amp; GSE-compliant reporting</li>
+        <li>FHA approved appraisals</li>
+        <li>FHA Approved appraisals</li>
+        <li>UAD 3.6 ready for seamless pipeline flow</li>
+        <li>Audit-ready documentation every time</li>
+      </ul>
+    </div>
+    <div class="serve-card">
+      <div class="serve-label">Segment 02</div>
+      <h3>AMCs</h3>
+      <ul>
+        <li>Appraisal Management Companies of all sizes</li>
+        <li>SLA-aligned delivery as standard</li>
+        <li>First-pass QC acceptance rate</li>
+        <li>Familiar with major AMC platforms &amp; workflows</li>
+      </ul>
+    </div>
+    <div class="serve-card">
+      <div class="serve-label">Segment 03</div>
+      <h3>Private &amp; Legal Clients</h3>
+      <ul>
+        <li>Estate planning &amp; settlement</li>
+        <li>Legal proceedings &amp; expert witness testimony</li>
+        <li>Divorce &amp; dispute resolution</li>
+        <li>High-net-worth &amp; luxury transactions</li>
+        <li>Clear communication, professional process</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-label">Get Started</div>
+  <div class="cta-divider"></div>
+  <h2 class="section-title">Ready for an Appraisal<br>You Can <em>Count On?</em></h2>
+  <p class="section-body">Whether you're a lender closing a loan, an AMC filling a difficult order, or a private client making an important decision — Vaughn Valuation delivers the accuracy and reliability you need.</p>
+  <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2.5rem;">
+    <a href="contact.html" class="btn-primary">Request an Appraisal</a>
+    <a href="services.html" class="btn-ghost" style="color:var(--slate); border-color:rgba(74,92,120,0.35);">View Our Services</a>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-name">Vaughn Valuation</div>
+    <div class="footer-sub">North Texas &amp; Texoma · Certified Residential Appraiser</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Privacy</a></li>
+  </ul>
+</footer>
+
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mob-cta">Request an Appraisal</a>
+</div>
+<script>
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu');
+  const h = document.getElementById('hamburger');
+  m.classList.toggle('open');
+  const spans = h.querySelectorAll('span');
+  if (m.classList.contains('open')) {
+    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+  } else {
+    spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+  }
+}
+</script>
+
+</body>
+</html>
