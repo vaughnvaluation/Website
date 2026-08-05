@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Vaughn Valuation</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2e; --navy-mid: #162440; --gold: #b8892e; --gold-light: #d4a84b;
+    --gold-pale: #f0deb0; --cream: #f8f5ef; --white: #ffffff; --slate: #4a5c78; --mist: #c8d2df; --text: #1a2a40;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 5vw; height: 72px; display: flex; align-items: center; justify-content: space-between; background: rgba(13,27,46,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(184,137,46,0.18); }
+  .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .logo-mark { width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; }
+  .nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+  .nav-wordmark .name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: #fff; letter-spacing: 0.06em; }
+  .nav-wordmark .tagline-small { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); margin-top: 3px; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+  .nav-links a { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+  .nav-cta { background: var(--gold) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 2px; font-weight: 500 !important; }
+
+  .page-hero { background: var(--navy); padding: 140px 5vw 80px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(184,137,46,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(184,137,46,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+  .page-hero::after { content: ''; position: absolute; left: 5vw; top: 100px; bottom: 60px; width: 1px; background: linear-gradient(to bottom, transparent, var(--gold) 20%, var(--gold) 80%, transparent); opacity: 0.4; }
+  .page-hero-inner { position: relative; z-index: 1; padding-left: calc(5vw + 28px); }
+  .eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--gold); }
+  .page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: #fff; line-height: 1.1; margin-bottom: 1.25rem; }
+  .page-hero h1 em { font-style: italic; color: var(--gold-pale); }
+  .page-hero p { font-size: 1rem; font-weight: 300; color: var(--mist); line-height: 1.7; max-width: 560px; }
+
+  main { max-width: 900px; margin: 0 auto; padding: 5rem 5vw 6rem; }
+
+  .faq-jump { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 4rem; }
+  .faq-jump a { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: #f0e8d8; padding: 0.55rem 1.1rem; border-radius: 20px; text-decoration: none; font-weight: 500; transition: background 0.2s; }
+  .faq-jump a:hover { background: var(--gold-pale); }
+
+  .faq-category { margin-bottom: 3.75rem; scroll-margin-top: 100px; }
+  .faq-category:last-of-type { margin-bottom: 0; }
+  .cat-label { font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase; color: #8a6420; margin-bottom: 0.5rem; font-weight: 600; }
+  .cat-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; color: #0a1628; margin-bottom: 1.5rem; padding-bottom: 0.9rem; border-bottom: 2px solid var(--gold); }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .faq-item { background: #fff; border: 1px solid #e0d9ce; border-radius: 4px; overflow: hidden; }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 1.25rem 1.5rem; font-size: 0.98rem; font-weight: 500; color: #0a1628; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after { content: '+'; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--gold); flex-shrink: 0; line-height: 1; }
+  .faq-item[open] summary::after { content: '\2212'; }
+  .faq-item[open] summary { border-bottom: 1px solid #e0d9ce; }
+  .faq-item summary:hover { color: #8a6420; }
+  .faq-answer { padding: 0.25rem 1.5rem 1.5rem; }
+  .faq-answer p { font-size: 0.9rem; color: var(--slate); font-weight: 300; line-height: 1.75; margin-bottom: 0.9rem; }
+  .faq-answer p:last-child { margin-bottom: 0; }
+  .faq-answer ul { margin: 0.25rem 0 1rem 1.1rem; }
+  .faq-answer li { font-size: 0.9rem; color: var(--slate); font-weight: 300; line-height: 1.7; margin-bottom: 0.5rem; }
+  .faq-answer li:last-child { margin-bottom: 0; }
+  .faq-answer a { color: #8a6420; font-weight: 500; text-decoration: underline; }
+
+  .cta-bar { background: var(--white); border-radius: 6px; padding: 3rem; text-align: center; border: 1px solid #e0d9ce; margin-top: 4.5rem; }
+  .cta-bar h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--navy); margin-bottom: 0.75rem; }
+  .cta-bar h3 em { font-style: italic; color: var(--gold); }
+  .cta-bar p { font-size: 0.9rem; color: var(--slate); font-weight: 300; margin-bottom: 2rem; }
+  .btn-primary { background: var(--gold); color: #fff; padding: 0.9rem 2.2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; border: none; cursor: pointer; border-radius: 2px; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-ghost { color: var(--slate); border: 1px solid #c8d2df; padding: 0.9rem 2.2rem; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; border-radius: 2px; text-decoration: none; display: inline-block; transition: all 0.2s; margin-left: 1rem; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  footer { background: var(--navy); padding: 3rem 5vw; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(184,137,46,0.15); }
+  .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: #fff; letter-spacing: 0.08em; }
+  .footer-sub { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+  .footer-links { display: flex; gap: 2rem; list-style: none; }
+  .footer-links a { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.7); border-radius: 2px; transition: all 0.3s; }
+  .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(13,27,46,0.98); backdrop-filter: blur(12px); z-index: 99; padding: 1.5rem 5vw 2rem; border-bottom: 1px solid rgba(184,137,46,0.18); flex-direction: column; gap: 0; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s; }
+  .mobile-menu a:hover { color: var(--gold-light); }
+  .mobile-menu .mob-cta { background: var(--gold); color: #fff !important; padding: 0.9rem 1.5rem; border-radius: 2px; text-align: center; margin-top: 1rem; border: none; }
+
+  @media(max-width:768px) {
+    .nav-links { display: none !important; }
+    .hamburger { display: flex; }
+    .page-hero-inner { padding-left: 2rem; }
+  }
+  @media(max-width:800px) {
+    main { padding: 3rem 5vw 4rem; }
+    .faq-item summary { font-size: 0.92rem; padding: 1.1rem 1.25rem; }
+    .faq-answer { padding: 0.25rem 1.25rem 1.25rem; }
+  }
+  @media(max-width:560px) {
+    .page-hero { padding: 110px 5vw 60px; }
+    .page-hero-inner { padding-left: 0; }
+    .page-hero::after { display: none; }
+    .page-hero h1 { font-size: 2.2rem; }
+    .cta-bar { padding: 2rem 1.5rem; }
+    .cta-bar .btn-ghost { margin-left: 0; margin-top: 0.75rem; display: block; text-align: center; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    .nav-wordmark .tagline-small { display: none; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="data:image/png;base64,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" alt="Vaughn Valuation" style="width:44px;height:44px;border-radius:50%;">
+    <div class="nav-wordmark">
+      <span class="name">Vaughn Valuation</span>
+      <span class="tagline-small">Certified Residential Appraiser · North Texas &amp; Texoma</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Request an Appraisal</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+  <span></span><span></span><span></span>
+</button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Common Questions</div>
+    <h1>Everything You Need<br>to Know <em>Before You Call</em></h1>
+    <p>Why you need an appraisal, how the process actually works, how to prepare your property, and how to tell a qualified appraiser from anyone else. Straight answers, no sales pitch.</p>
+  </div>
+</div>
+
+<main>
+  <div class="faq-jump">
+    <a href="#why">Why You Need an Appraisal</a>
+    <a href="#process">Process &amp; Timing</a>
+    <a href="#prepare">Preparing Your Property</a>
+    <a href="#vetting">Choosing an Appraiser</a>
+    <a href="#cost">Cost &amp; Special Situations</a>
+  </div>
+
+  <div class="faq-category" id="why">
+    <div class="cat-label">Getting Oriented</div>
+    <h2 class="cat-title">Why You Need an Appraisal</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Why do I need an appraisal at all?</summary>
+        <div class="faq-answer">
+          <p>An appraisal is an independent, professional opinion of value — not an estimate pulled from an algorithm, and not a sales pitch from an agent trying to win your listing. Lenders require one before approving a mortgage because they need to know the collateral is worth what's being borrowed against it; it protects them, and it protects you from overpaying.</p>
+          <p>Beyond lending, people order private appraisals for reasons that have nothing to do with a loan: settling an estate, dividing property in a divorce, appealing a property tax assessment, removing PMI from a loan, or pricing a home accurately before it goes on the market. In every case, the value has to come from someone with no financial stake in the number — an appraiser doesn't get paid more if the value comes in higher, and that independence is exactly what makes the opinion credible.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What's the difference between an appraisal and a home inspection?</summary>
+        <div class="faq-answer">
+          <p>They answer two different questions. An inspection asks "what condition is this house in?" — a licensed inspector tests systems, climbs into the attic, runs the HVAC, and flags anything from a cracked foundation to a slow leak. An appraisal asks "what is this house worth?" — condition is one factor among many (location, size, comparable sales, market trends, features), but an appraiser isn't performing a diagnostic inspection.</p>
+          <p>An appraiser will note visible defects — a sagging roofline, obvious water damage, missing handrails — because those things affect value and, for FHA loans, may need to be addressed before closing. But an appraisal is never a substitute for a full inspection. If you're buying, get both.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How is an appraisal different from a real estate agent's CMA?</summary>
+        <div class="faq-answer">
+          <p>A Comparative Market Analysis is a free tool agents put together to help price a listing or make an offer — useful, but it isn't a regulated, standardized professional opinion. A CMA doesn't require a state credential, doesn't follow the Uniform Standards of Professional Appraisal Practice (USPAP), and isn't produced by a truly disinterested party — the agent putting it together typically has a direct financial interest in the transaction happening.</p>
+          <p>An appraisal, by contrast, is prepared by a state-licensed or certified appraiser, follows USPAP's ethics and reporting rules, and is defensible in a way a CMA simply isn't — which is why lenders, courts, and the IRS accept appraisals but not CMAs.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="faq-category" id="process">
+    <div class="cat-label">What Actually Happens</div>
+    <h2 class="cat-title">The Appraisal Process &amp; Timing</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>How long does an appraisal take?</summary>
+        <div class="faq-answer">
+          <p>Two different clocks are running. The site visit itself is usually quick — most properties, especially standard lender assignments, take about 15 minutes. Larger or more complex properties take longer: plan on around 30 minutes for large acreage with outbuildings, or homes between 3,000 and 6,000 square feet, and around 45 minutes for anything over 6,000 square feet. An hour covers just about everything, even the largest or most complex assignments.</p>
+          <p>The report is a separate matter, and this is where most of the turnaround time actually lives. My average is 2 business days from start to finish — often I have it turned in the next business day, and sometimes same-day after inspecting. Rush turnaround is available when a transaction needs it. If you're on a lender's timeline, ask up front what to expect so it doesn't become a surprise mid-transaction.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What happens during the appraisal site visit?</summary>
+        <div class="faq-answer">
+          <p>I measure the home's gross living area according to the ANSI Z765 standard — the national measurement standard that determines what counts as finished, above-grade square footage — photograph the interior, exterior, and street scene, and walk every room to verify layout, condition, and quality of finishes.</p>
+          <p>I'll check for anything that affects value or, on FHA assignments, anything that needs to be flagged for health and safety reasons: exposed wiring, missing handrails, non-functioning mechanical systems. I'm not testing appliances or running diagnostics — that's an inspector's job — but I am forming an informed opinion of the property's overall condition and quality relative to the market.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do you actually determine the value?</summary>
+        <div class="faq-answer">
+          <p>For the vast majority of residential assignments, the primary method is the sales comparison approach — finding recent, closed sales of similar properties in the same market area and adjusting for the differences between them and the subject property: square footage, lot size, condition, updates, garage, and so on.</p>
+          <p>Two other approaches exist — the cost approach (what it would cost to rebuild, minus depreciation) and the income approach (what the property would earn as a rental) — and I'll use those when relevant, like new construction or an income-producing property. But for a typical owner-occupied home, sales comparison does the heavy lifting. The goal isn't to hit a number — it's to let the market data lead to a supportable, defensible conclusion.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need to be there for the appraisal?</summary>
+        <div class="faq-answer">
+          <p>No — and honestly, you don't need to be. What matters most is access, not attendance. My schedule runs tight, and the single most helpful thing you can do is make sure I can get in without waiting on anyone: a door code, or a key left somewhere findable (under the mat, a lockbox, with a neighbor), keeps things moving and lets me fit your appraisal in efficiently.</p>
+          <p>If you'd still like to be present — for private assignments, pre-listing appraisals especially — that's fine too, and it's a good chance to point out updates that aren't obvious at a glance (a new roof, updated electrical, a permitted addition). Either way, presence has no bearing on the value itself. Appraisers are bound by independence rules that prohibit anyone with a financial interest in the transaction from pressuring or coaching the value toward a target number. I'll take information about the property; I won't take direction on the number.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="faq-category" id="prepare">
+    <div class="cat-label">Before I Arrive</div>
+    <h2 class="cat-title">Preparing for Your Appraisal</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>How should I prepare my home for the appraisal?</summary>
+        <div class="faq-answer">
+          <p>You don't need to stage the house — this isn't a showing — but a few things make the visit faster and the report more accurate:</p>
+          <ul>
+            <li>Access is the most important thing, and you don't need to be home to provide it. A door code or a key left somewhere findable (under the mat, a lockbox) is often the single most helpful thing a homeowner can do, especially given how tight my schedule runs.</li>
+            <li>Clear access to every area I'll need to see: attic, crawlspace, garage, mechanical room, and any outbuildings.</li>
+            <li>Make sure utilities are on so I can verify that HVAC, water heater, and major systems are functioning.</li>
+            <li>Secure pets somewhere they won't interfere with the walk-through.</li>
+            <li>Put together a written list of updates and improvements — new roof, remodeled kitchen, added bathroom — with approximate dates and costs if you have them.</li>
+            <li>If you've done any permitted work, have the permits or know where to find them.</li>
+          </ul>
+          <p>None of this needs to be elaborate. A five-minute list on a notepad covers most of it.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What documents should I have ready?</summary>
+        <div class="faq-answer">
+          <p>If you have them, these speed things up and can improve accuracy:</p>
+          <ul>
+            <li>A recent survey or plat, especially if lot lines or acreage are in question.</li>
+            <li>A list of capital improvements with dates and approximate costs.</li>
+            <li>Permits for any additions or major renovations.</li>
+            <li>HOA documents, if the property is in a homeowners association — dues, restrictions, and amenities can factor into value.</li>
+            <li>A copy of a prior appraisal, if one exists and is recent.</li>
+          </ul>
+          <p>Nothing here is required — I can complete an accurate appraisal without any of it — but the more informed I am walking in, the less likely anything gets missed or misjudged.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need to make repairs before the appraisal?</summary>
+        <div class="faq-answer">
+          <p>Depends on the loan type and what's wrong. For a conventional loan or a private appraisal, there's no required repair list — deferred maintenance simply gets factored into the value, the same way it would factor into what a buyer is willing to pay.</p>
+          <p>FHA and VA appraisals are different: HUD requires that certain health, safety, and structural issues be flagged and, in many cases, resolved before the loan can close. That includes things like peeling paint in homes built before 1978 (lead paint risk), exposed wiring, missing or broken handrails on stairs, broken windows, and non-functioning HVAC. If you know your buyer is using FHA or VA financing, it's worth doing a quick walk-through for these specific issues before I show up — catching them early is a lot cheaper than a delayed closing.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="faq-category" id="vetting">
+    <div class="cat-label">Who You're Hiring</div>
+    <h2 class="cat-title">Choosing &amp; Vetting an Appraiser</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>What credentials should I actually look for?</summary>
+        <div class="faq-answer">
+          <p>In Texas, appraisers are licensed through the Texas Appraiser Licensing and Certification Board (TALCB) at one of several tiers — Trainee, Licensed Residential, Certified Residential, and Certified General. A Certified Residential Appraiser (CRA) has completed more required education and experience hours than a Licensed appraiser and can appraise more complex residential properties without the value or transaction-type restrictions a Licensed credential carries.</p>
+          <p>For lender work, you'll also want to confirm FHA approval if the loan is FHA-backed — not every certified appraiser is on the FHA roster. You can verify any appraiser's credential status and standing through your state licensing board or the national ASC Registry — it takes two minutes and it's worth doing before you hire someone for anything beyond a routine lender assignment.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What should I ask before hiring an appraiser?</summary>
+        <div class="faq-answer">
+          <p>A few questions separate a good fit from a bad one:</p>
+          <ul>
+            <li>Are you certified or licensed, and in what state? (Ask them to confirm the credential tier, not just "licensed.")</li>
+            <li>Are you FHA-approved, if that's relevant to the assignment?</li>
+            <li>Have you worked in this specific property type or area before — waterfront, luxury, rural acreage, whatever applies?</li>
+            <li>What's your typical turnaround time, and does that change for a rush request?</li>
+            <li>Are you independent of the transaction — no referral fee, no ownership stake, nothing that creates a conflict?</li>
+          </ul>
+          <p>A straight, specific answer to each of these tells you more than a star rating ever will.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I choose my own appraiser for a mortgage loan?</summary>
+        <div class="faq-answer">
+          <p>Not directly, and that's by design. Under appraiser independence rules that followed the 2008 financial crisis, lenders can't let a borrower, loan officer, or real estate agent hand-pick the appraiser for a federally related mortgage transaction — the assignment has to come through an independent process, usually an appraisal management company or an internal rotation, specifically to prevent anyone with a stake in the deal from steering the value.</p>
+          <p>What you can do is request a reconsideration of value if you have specific, factual grounds to believe the appraisal missed relevant data — comparable sales the appraiser didn't have, for instance. And for anything outside a federally related loan — pre-listing, PMI removal, divorce, estate settlement, litigation — you're free to hire whoever you want directly.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="faq-category" id="cost">
+    <div class="cat-label">The Practical Stuff</div>
+    <h2 class="cat-title">Cost, Disputes &amp; Special Situations</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>How much does an appraisal cost, and what affects the price?</summary>
+        <div class="faq-answer">
+          <p>Cost depends on the property, not a flat menu price. A standard single-family home in a typical subdivision costs less to appraise than a waterfront estate, a large-acreage property, or anything with an unusual layout that requires more time on-site and more research to find comparable sales. Rush turnaround typically carries a premium too, since it means reordering the queue.</p>
+          <p>The most reliable way to get an accurate number is to call with the property details — you'll get a straight quote before any work starts, no surprises on the back end.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What if I disagree with the appraised value?</summary>
+        <div class="faq-answer">
+          <p>On a lender-ordered appraisal, the path is a Reconsideration of Value (ROV), submitted through your lender, not directly to the appraiser. It's not a negotiation — it's a request for the appraiser to review specific, relevant data that may have been overlooked: a closed comparable sale that wasn't available at the time, an error in square footage, a factual mistake in the report.</p>
+          <p>Vague dissatisfaction ("I think it's worth more") doesn't move a number; a legitimate comp the appraiser didn't have access to might. Every ROV request deserves a serious look, and a report should be revised if the data supports it — but a value shouldn't change just because someone would prefer a different number, on either side of the transaction. That's the whole point of the independence requirement.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why would I get a pre-listing appraisal before I sell?</summary>
+        <div class="faq-answer">
+          <p>Because pricing a home off a Zillow estimate or an agent's CMA means pricing off someone else's guess. A pre-listing appraisal gives you a defensible, market-supported number before you commit to a list price — which matters because overpricing is the single most common, and costly, mistake sellers make.</p>
+          <p>It also surfaces problems early: square footage discrepancies, FHA compliance issues, anything that could stall a deal mid-transaction if it's discovered by a buyer's appraiser instead of you. See the <a href="services.html">Pre-Listing Appraisals</a> service for the full breakdown.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>What is an expert witness appraisal, and when would I need one?</summary>
+        <div class="faq-answer">
+          <p>Expert witness appraisals support legal proceedings where a credible, independent opinion of value is required to hold up under scrutiny — divorce settlements, estate disputes, property tax appeals, eminent domain cases, or litigation where a property's value is directly at issue.</p>
+          <p>These reports are held to the same USPAP standards as any other appraisal, but the appraiser may also be required to testify and defend the analysis under cross-examination, which requires a different level of documentation and preparedness than a standard lender report. If you're an attorney or a client anticipating litigation, ask specifically about expert witness experience — not every appraiser has been through that process.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <div class="cta-bar">
+    <h3>Still Have a <em>Question?</em></h3>
+    <p>Every property and situation is a little different — happy to talk through yours directly.</p>
+    <a href="contact.html" class="btn-primary">Request an Appraisal</a>
+    <a href="services.html" class="btn-ghost">View Our Services</a>
+  </div>
+</main>
+
+<footer>
+  <div><div class="footer-name">Vaughn Valuation</div><div class="footer-sub">North Texas &amp; Texoma · Certified Residential Appraiser</div></div>
+  <ul class="footer-links">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</footer>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="mob-cta">Request an Appraisal</a>
+</div>
+<script>
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu');
+  const h = document.getElementById('hamburger');
+  m.classList.toggle('open');
+  const spans = h.querySelectorAll('span');
+  if (m.classList.contains('open')) {
+    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+  } else {
+    spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+  }
+}
+</script>
+</body>
+</html>
